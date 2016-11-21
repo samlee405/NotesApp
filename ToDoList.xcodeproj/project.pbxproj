@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		EFF3E0611DDF866B00564053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3E0601DDF866B00564053 /* AppDelegate.swift */; };
-		EFF3E0631DDF866B00564053 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3E0621DDF866B00564053 /* ViewController.swift */; };
 		EFF3E0661DDF866B00564053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF3E0641DDF866B00564053 /* Main.storyboard */; };
 		EFF3E0681DDF866B00564053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF3E0671DDF866B00564053 /* Assets.xcassets */; };
 		EFF3E06B1DDF866B00564053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF3E0691DDF866B00564053 /* LaunchScreen.storyboard */; };
+		EFF3E0751DDF86CC00564053 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3E0741DDF86CC00564053 /* ListTableViewCell.swift */; };
+		EFF3E0771DDF86EC00564053 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3E0761DDF86EC00564053 /* ListTableViewController.swift */; };
+		EFF3E0791DDF87B500564053 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3E0781DDF87B500564053 /* AddItemViewController.swift */; };
+		EFF3E07C1DDF947500564053 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3E07B1DDF947500564053 /* ToDo.swift */; };
+		EFF3E07E1DE37D7D00564053 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3E07D1DE37D7D00564053 /* EditItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EFF3E05D1DDF866B00564053 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF3E0601DDF866B00564053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EFF3E0621DDF866B00564053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EFF3E0651DDF866B00564053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFF3E0671DDF866B00564053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFF3E06A1DDF866B00564053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFF3E06C1DDF866B00564053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFF3E0741DDF86CC00564053 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		EFF3E0761DDF86EC00564053 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		EFF3E0781DDF87B500564053 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		EFF3E07B1DDF947500564053 /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		EFF3E07D1DE37D7D00564053 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,25 @@
 			isa = PBXGroup;
 			children = (
 				EFF3E0601DDF866B00564053 /* AppDelegate.swift */,
-				EFF3E0621DDF866B00564053 /* ViewController.swift */,
+				EFF3E07A1DDF945C00564053 /* Model */,
+				EFF3E0761DDF86EC00564053 /* ListTableViewController.swift */,
+				EFF3E0741DDF86CC00564053 /* ListTableViewCell.swift */,
+				EFF3E0781DDF87B500564053 /* AddItemViewController.swift */,
+				EFF3E07D1DE37D7D00564053 /* EditItemViewController.swift */,
 				EFF3E0641DDF866B00564053 /* Main.storyboard */,
 				EFF3E0671DDF866B00564053 /* Assets.xcassets */,
 				EFF3E0691DDF866B00564053 /* LaunchScreen.storyboard */,
 				EFF3E06C1DDF866B00564053 /* Info.plist */,
 			);
 			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		EFF3E07A1DDF945C00564053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFF3E07B1DDF947500564053 /* ToDo.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF3E0631DDF866B00564053 /* ViewController.swift in Sources */,
+				EFF3E0771DDF86EC00564053 /* ListTableViewController.swift in Sources */,
+				EFF3E07E1DE37D7D00564053 /* EditItemViewController.swift in Sources */,
+				EFF3E07C1DDF947500564053 /* ToDo.swift in Sources */,
+				EFF3E0791DDF87B500564053 /* AddItemViewController.swift in Sources */,
 				EFF3E0611DDF866B00564053 /* AppDelegate.swift in Sources */,
+				EFF3E0751DDF86CC00564053 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +321,7 @@
 				EFF3E0711DDF866B00564053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
