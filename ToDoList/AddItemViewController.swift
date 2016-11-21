@@ -14,11 +14,10 @@ protocol AddItemViewControllerDelegate {
 
 class AddItemViewController: UIViewController {
 
-    @IBOutlet weak var toDoTextField: UITextField!
+    @IBOutlet weak var toDoTitle: UITextField!
     @IBOutlet weak var toDoDescription: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var datePickerValue: String?
     var delegate: AddItemViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -27,13 +26,18 @@ class AddItemViewController: UIViewController {
     }
 
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
-        datePickerValue = getDate(datePicker: datePicker)
-        let dateString = "Deadline: \(datePickerValue!)"
-        let newToDo = ToDo(title: toDoTextField.text!, date: dateString, longDescription: toDoDescription.text!)
-        newToDo.rawDate = datePicker.date
-        delegate?.createNewToDo(newItem: newToDo)
-        
-        performSegue(withIdentifier: "unwindToListTableViewController", sender: self)
+        if toDoTitle.text! != "" {
+            let datePickerValue = getDate(datePicker: datePicker)
+            let dateString = "Deadline: \(datePickerValue)"
+            let newToDo = ToDo(title: toDoTitle.text!, date: dateString, longDescription: toDoDescription.text!)
+            newToDo.rawDate = datePicker.date
+            delegate?.createNewToDo(newItem: newToDo)
+            
+            performSegue(withIdentifier: "unwindToListTableViewController", sender: self)
+        }
+        else {
+            print("Please enter a title")
+        }
     }
     
     func getDate(datePicker: UIDatePicker) -> String {

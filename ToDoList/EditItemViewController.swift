@@ -16,14 +16,9 @@ class EditItemViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
-    @IBOutlet weak var datePicker: UIDatePicker! {
-        didSet {
-            datePickerValue = getDate(datePicker: datePicker)
-        }
-    }
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     var currentToDo: ToDo?
-    var datePickerValue: String?
     var index: Int?
     var delegate: EditItemViewControllerDelegate?
 
@@ -37,7 +32,8 @@ class EditItemViewController: UIViewController {
     }
 
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
-        let dateString = "Deadline: \(datePickerValue!)"
+        let datePickerValue = getDate(datePicker: datePicker)
+        let dateString = "Deadline: \(datePickerValue)"
         delegate?.updateToDoDetails(title: titleTextField.text!, description: descriptionTextField.text!, date: dateString, index: index!)
         
         performSegue(withIdentifier: "unwindToListTableViewController", sender: self)

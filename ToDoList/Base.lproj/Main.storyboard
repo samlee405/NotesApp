@@ -223,7 +223,7 @@
                     <connections>
                         <outlet property="datePicker" destination="vsj-BX-mCl" id="gdb-Fk-9Gi"/>
                         <outlet property="toDoDescription" destination="1rf-gX-bfA" id="MgI-vc-Kss"/>
-                        <outlet property="toDoTextField" destination="1KW-T7-y6b" id="a71-K4-vic"/>
+                        <outlet property="toDoTitle" destination="1KW-T7-y6b" id="INY-ei-H8H"/>
                         <segue destination="0m8-gj-AbL" kind="unwind" identifier="unwindToListTableViewController" unwindAction="unwindToListTableViewControllerWithSegue:" id="YFB-2y-pXg"/>
                     </connections>
                 </viewController>
